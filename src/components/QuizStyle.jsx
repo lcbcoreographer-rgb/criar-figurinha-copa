@@ -94,15 +94,15 @@ export default function QuizStyle({ answers, updateAnswer, goNext, goBack }) {
           </p>
         </motion.div>
 
-        {/* Layout: grid de opções + preview em destaque */}
-        <div className="flex flex-col lg:flex-row gap-8 w-full items-start justify-center">
+        {/* Layout: preview em cima no mobile, lado a lado no desktop */}
+        <div className="flex flex-col-reverse lg:flex-row gap-6 w-full items-start justify-center">
 
           {/* Grade de cards */}
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 w-full lg:max-w-xs shrink-0"
+            className="grid grid-cols-2 lg:grid-cols-1 gap-2 w-full lg:max-w-xs shrink-0"
           >
             {ORDER.map(id => {
               const meta = STYLE_META[id]

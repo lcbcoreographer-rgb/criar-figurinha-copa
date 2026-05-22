@@ -317,31 +317,27 @@ export default function Landing({ goNext }) {
       <StadiumLight left="-5%"   top="60%"  color="rgba(0,156,59,0.07)"   delay={2} />
       <StadiumLight left="75%"   top="55%"  color="rgba(255,200,0,0.07)"  delay={1.5} />
 
-      {/* Bolas de futebol */}
-      <SoccerBall style={{ left: '4%',  top: '18%',   zIndex: 3 }} delay={1.0} size={36} />
-      <SoccerBall style={{ right: '5%', top: '25%',   zIndex: 3 }} delay={1.3} size={28} />
-      <SoccerBall style={{ left: '8%',  bottom: '22%', zIndex: 3 }} delay={1.6} size={32} />
-      <SoccerBall style={{ right: '7%', bottom: '18%', zIndex: 3 }} delay={1.9} size={24} />
+      {/* Decorativos — visíveis apenas em telas maiores (sm+) */}
+      <div className="hidden sm:block">
+        <SoccerBall style={{ left: '4%',  top: '18%',    zIndex: 3 }} delay={1.0} size={36} />
+        <SoccerBall style={{ right: '5%', top: '25%',    zIndex: 3 }} delay={1.3} size={28} />
+        <SoccerBall style={{ left: '8%',  bottom: '22%', zIndex: 3 }} delay={1.6} size={32} />
+        <SoccerBall style={{ right: '7%', bottom: '18%', zIndex: 3 }} delay={1.9} size={24} />
+        <FloatingStar style={{ left: '12%', top: '12%',     zIndex: 3 }} delay={0.8}  size={20} />
+        <FloatingStar style={{ right: '10%', top: '15%',    zIndex: 3 }} delay={1.1}  size={16} />
+        <FloatingStar style={{ left: '18%', bottom: '30%',  zIndex: 3 }} delay={1.4}  size={18} />
+        <FloatingStar style={{ right: '14%', bottom: '25%', zIndex: 3 }} delay={1.7}  size={14} />
+        <FloatingStar style={{ left: '50%', top: '8%',      zIndex: 3 }} delay={0.6}  size={12} />
+        <FloatingStar style={{ right: '22%', top: '40%',    zIndex: 3 }} delay={2.0}  size={10} />
+        <Trophy style={{ right: '3%', top: '42%',   zIndex: 3 }} delay={1.2} />
+        <Trophy style={{ left: '2%', bottom: '35%', zIndex: 3 }} delay={1.8} />
+        <BRFlag style={{ left: '3%',  top: '35%',    zIndex: 3 }} delay={1.0} />
+        <BRFlag style={{ right: '3%', bottom: '38%', zIndex: 3 }} delay={1.5} />
+      </div>
 
-      {/* Estrelas douradas */}
-      <FloatingStar style={{ left: '12%', top: '12%',     zIndex: 3 }} delay={0.8}  size={20} />
-      <FloatingStar style={{ right: '10%', top: '15%',    zIndex: 3 }} delay={1.1}  size={16} />
-      <FloatingStar style={{ left: '18%', bottom: '30%',  zIndex: 3 }} delay={1.4}  size={18} />
-      <FloatingStar style={{ right: '14%', bottom: '25%', zIndex: 3 }} delay={1.7}  size={14} />
-      <FloatingStar style={{ left: '50%', top: '8%',      zIndex: 3 }} delay={0.6}  size={12} />
-      <FloatingStar style={{ right: '22%', top: '40%',    zIndex: 3 }} delay={2.0}  size={10} />
-
-      {/* Troféus */}
-      <Trophy style={{ right: '3%', top: '42%',    zIndex: 3 }} delay={1.2} />
-      <Trophy style={{ left: '2%', bottom: '35%',  zIndex: 3 }} delay={1.8} />
-
-      {/* Bandeiras Brasil */}
-      <BRFlag style={{ left: '3%',  top: '35%',     zIndex: 3 }} delay={1.0} />
-      <BRFlag style={{ right: '3%', bottom: '38%',  zIndex: 3 }} delay={1.5} />
-
-      {/* Floating mini-cards (parallax) */}
+      {/* Mini-cards flutuantes — apenas sm+ */}
       <motion.div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden sm:block"
         style={{ x: springX, y: springY, zIndex: 4 }}
       >
         {FLOAT_CARDS.map((c, i) => <FloatCard key={i} card={c} />)}

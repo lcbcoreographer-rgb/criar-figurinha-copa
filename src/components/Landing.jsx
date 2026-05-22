@@ -453,7 +453,7 @@ export default function Landing({ goNext }) {
           className="flex flex-wrap justify-center gap-4"
         >
           {[
-            { icon: '📄', text: 'PDF completo' },
+            { icon: '🎨', text: 'Guia premium' },
             { icon: '⚡', text: 'Entrega imediata' },
             { icon: '🔒', text: 'Pagamento seguro' },
           ].map(({ icon, text }) => (

@@ -11,8 +11,8 @@ const STYLE_META = {
 }
 
 const STEPS = [
-  { icon: '📧', title: 'Verifique seu e-mail', desc: 'Enviamos o PDF com o passo a passo para o e-mail informado. Cheque também a caixa de spam.' },
-  { icon: '📄', title: 'Abra o PDF', desc: 'O guia contém todas as instruções detalhadas para criar sua figurinha da Copa com qualidade premium.' },
+  { icon: '📧', title: 'Verifique seu e-mail', desc: 'Enviamos o guia de personalização premium para o e-mail informado. Cheque também a caixa de spam.' },
+  { icon: '📄', title: 'Abra o guia', desc: 'O guia de personalização premium contém todas as instruções para criar sua figurinha da Copa.' },
   { icon: '🎨', title: 'Crie sua figurinha', desc: 'Siga o passo a passo, personalize com sua foto e o estilo escolhido.' },
   { icon: '📱', title: 'Compartilhe!', desc: 'Poste nas redes, desafie amigos e marque @minhasfigurinhadacopa.' },
 ]
@@ -127,7 +127,7 @@ export default function ThankYou({ answers }) {
             Pedido confirmado!
           </h1>
           <p className="text-white/60 font-raj text-base max-w-sm">
-            Em breve você receberá o PDF com o passo a passo no e-mail{' '}
+            Em breve você receberá o guia de personalização premium no e-mail{' '}
             <b className="text-white/90">{answers.email || 'informado'}</b>
           </p>
         </motion.div>
@@ -164,7 +164,7 @@ export default function ThankYou({ answers }) {
           <div className="text-left">
             <p className="font-raj font-bold text-white/90">Verifique seu e-mail</p>
             <p className="font-raj text-sm text-white/50 mt-1">
-              O PDF foi enviado para <b className="text-ng">{answers.email || 'seu e-mail'}</b>.
+              O guia de personalização foi enviado para <b className="text-ng">{answers.email || 'seu e-mail'}</b>.
               Cheque a caixa de entrada e também o <b className="text-white/70">spam</b>.
             </p>
             {answers.phone && (

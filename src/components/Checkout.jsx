@@ -15,8 +15,8 @@ const PLANS = [
     description: 'Perfeito para você brilhar',
     features: [
       '1 figurinha personalizada',
-      'PDF com passo a passo completo',
       'Guia de personalização premium',
+      'Passo a passo completo',
       'Suporte por WhatsApp',
     ],
     color: '#00FF87',
@@ -33,10 +33,10 @@ const PLANS = [
     badge: '⭐ MAIS ESCOLHIDO',
     features: [
       'Até 5 figurinhas personalizadas',
-      'PDF com passo a passo completo',
+      'Guia de personalização premium',
+      'Passo a passo completo',
       'Pack completo para a família',
       'Templates exclusivos família',
-      'Guia de personalização premium',
       'Suporte prioritário por WhatsApp',
     ],
     color: '#FFD700',
@@ -105,7 +105,7 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
           </p>
           <h2 className="font-bebas text-white text-4xl sm:text-5xl">Escolha seu plano</h2>
           <p className="text-white/40 font-raj mt-2">
-            Após o pagamento você recebe o PDF no seu e-mail
+            Após o pagamento você recebe o guia de personalização premium
           </p>
         </motion.div>
 

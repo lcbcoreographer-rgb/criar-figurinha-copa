@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ng: #00FF87;
+  --nd: #00CC6A;
+  --gd: #FFD700;
+  --gdm: #C9A227;
+  --dark: #0A0A0A;
+  --card: #161616;
+}
+
+@layer base {
+  body {
+    background: #0A0A0A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-ng { color: #00FF87; }
+  .text-gd { color: #FFD700; }
+
+  .glow-ng {
+    box-shadow: 0 0 20px rgba(0,255,135,0.4), 0 0 60px rgba(0,255,135,0.15);
+  }
+  .glow-ng-sm {
+    box-shadow: 0 0 10px rgba(0,255,135,0.3);
+  }
+  .glow-gd {
+    box-shadow: 0 0 20px rgba(255,215,0,0.4), 0 0 60px rgba(255,215,0,0.15);
+  }
+  .glow-gd-sm {
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+  }
+
+  .gradient-ng {
+    background: linear-gradient(135deg, #00FF87 0%, #0099FF 100%);
+  }
+  .gradient-gd {
+    background: linear-gradient(135deg, #8B6914 0%, #FFD700 50%, #8B6914 100%);
+  }
+  .gradient-text-ng {
+    background: linear-gradient(135deg, #00FF87, #0099FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-gd {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .glass-ng {
+    background: rgba(0,255,135,0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,255,135,0.15);
+  }
+  .glass-gd {
+    background: rgba(255,215,0,0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,215,0,0.15);
+  }
+
+  .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+  .font-raj { font-family: 'Rajdhani', sans-serif; }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.05) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s infinite;
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00FF87 0%, #00CC6A 100%);
+    color: #000;
+    font-weight: 800;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0,255,135,0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 50px rgba(0,255,135,0.6);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.99);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #8B6914 0%, #FFD700 50%, #8B6914 100%);
+    color: #000;
+    font-weight: 800;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(255,215,0,0.4);
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 50px rgba(255,215,0,0.6);
+  }
+
+  .screen-base {
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .option-card {
+    cursor: pointer;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    transition: all 0.25s ease;
+  }
+  .option-card:hover {
+    border-color: rgba(0,255,135,0.4);
+    background: rgba(0,255,135,0.06);
+    transform: translateY(-2px);
+  }
+  .option-card.selected {
+    border-color: #00FF87;
+    background: rgba(0,255,135,0.08);
+    box-shadow: 0 0 20px rgba(0,255,135,0.25);
+  }
+
+  .neon-input {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    outline: none;
+    transition: all 0.25s ease;
+  }
+  .neon-input:focus {
+    border-color: #00FF87;
+    box-shadow: 0 0 0 3px rgba(0,255,135,0.15);
+    background: rgba(0,255,135,0.04);
+  }
+  .neon-input::placeholder { color: rgba(255,255,255,0.25); }
+
+  .holographic-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0,255,135,0.06) 0%,
+      rgba(255,255,255,0.03) 25%,
+      rgba(0,153,255,0.06) 50%,
+      rgba(255,215,0,0.04) 75%,
+      rgba(0,255,135,0.06) 100%
+    );
+    background-size: 400% 400%;
+    animation: shimmer 4s ease infinite;
+    pointer-events: none;
+  }
+}
+
+/* Loading dots animation */
+@keyframes loadingDot {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.loading-dot:nth-child(1) { animation: loadingDot 1.4s 0s infinite; }
+.loading-dot:nth-child(2) { animation: loadingDot 1.4s 0.2s infinite; }
+.loading-dot:nth-child(3) { animation: loadingDot 1.4s 0.4s infinite; }
+
+/* Stadium light rays */
+@keyframes lightRay {
+  0%,100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+/* Particle float */
+@keyframes particleFloat {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-20px) translateX(var(--drift, 30px)); opacity: 0; }
+}
+
+/* Scan line */
+@keyframes scanLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Neon pulse */
+@keyframes neonPulse {
+  0%,100% { text-shadow: 0 0 10px #00FF87, 0 0 20px #00FF87, 0 0 40px #00FF87; }
+  50% { text-shadow: 0 0 5px #00FF87, 0 0 10px #00FF87, 0 0 20px #00FF87; }
+}
+.neon-text { animation: neonPulse 2s ease-in-out infinite; }
+
+/* Bar fill animation */
+@keyframes barFill {
+  from { width: 0%; }
+}
+.bar-fill { animation: barFill 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }

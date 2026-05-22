@@ -2,13 +2,36 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import ProgressBar from './ProgressBar'
 
-const OPTIONS = [
-  { id: 'oitavas',  label: 'Oitavas',   emoji: '😐', pct: 4  },
-  { id: 'quartas',  label: 'Quartas',   emoji: '🙂', pct: 9  },
-  { id: 'semi',     label: 'Semi Final', emoji: '😤', pct: 11 },
-  { id: 'final',    label: 'Final',      emoji: '🔥', pct: 16 },
-  { id: 'hexa',     label: 'HEXA! 🏆',  emoji: '🇧🇷', pct: 60 },
+const OPTIONS_BRASIL = [
+  { id: 'oitavas', label: 'Oitavas',    emoji: '😐', pct: 4  },
+  { id: 'quartas', label: 'Quartas',    emoji: '🙂', pct: 9  },
+  { id: 'semi',    label: 'Semi Final', emoji: '😤', pct: 11 },
+  { id: 'final',   label: 'Final',      emoji: '🔥', pct: 16 },
+  { id: 'hexa',    label: 'HEXA! 🏆',  emoji: '🇧🇷', pct: 60 },
 ]
+
+const OPTIONS_OUTRO = [
+  { id: 'oitavas', label: 'Oitavas',    emoji: '😐', pct: 8  },
+  { id: 'quartas', label: 'Quartas',    emoji: '🙂', pct: 18 },
+  { id: 'semi',    label: 'Semi Final', emoji: '😤', pct: 24 },
+  { id: 'final',   label: 'Final',      emoji: '🔥', pct: 28 },
+  { id: 'campeao', label: 'CAMPEÃO! 🏆', emoji: '🌟', pct: 22 },
+]
+
+const COUNTRY_NAMES = {
+  brasil: 'Brasil', argentina: 'Argentina', portugal: 'Portugal',
+  franca: 'França', alemanha: 'Alemanha', espanha: 'Espanha', outro: 'seu time',
+}
+
+const HEXA_FACTS = {
+  brasil:    '78% acreditam no HEXA',
+  argentina: '65% acreditam no BI',
+  portugal:  '71% acreditam no título',
+  franca:    '69% acreditam no título',
+  alemanha:  '62% acreditam no título',
+  espanha:   '67% acreditam no título',
+  outro:     '70% acreditam no título',
+}
 
 function AnimatedBar({ pct, selected, color = '#00FF87' }) {
   const [current, setCurrent] = useState(0)
@@ -49,6 +72,11 @@ function FakeCounter({ target }) {
 
 export default function QuizPrediction({ answers, updateAnswer, goNext }) {
   const [selected, setSelected] = useState(answers.prediction || '')
+  const country = answers.country || 'brasil'
+  const isBrasil = country === 'brasil'
+  const OPTIONS = isBrasil ? OPTIONS_BRASIL : OPTIONS_OUTRO
+  const countryName = COUNTRY_NAMES[country] || 'seu time'
+  const hexaFact = HEXA_FACTS[country] || HEXA_FACTS.outro
 
   const pick = (id) => {
     setSelected(id)
@@ -68,7 +96,7 @@ export default function QuizPrediction({ answers, updateAnswer, goNext }) {
         >
           <p className="text-ng/60 font-raj font-semibold text-sm tracking-widest uppercase mb-3">Pergunta 2</p>
           <h2 className="font-bebas text-white text-4xl sm:text-5xl">
-            O Brasil chega onde?
+            {isBrasil ? 'O Brasil chega onde?' : `A ${countryName} chega onde?`}
           </h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -76,7 +104,7 @@ export default function QuizPrediction({ answers, updateAnswer, goNext }) {
             transition={{ delay: 0.6 }}
             className="text-ng/70 font-raj text-sm font-semibold mt-2"
           >
-            ★ 78% dos fãs acreditam no HEXA ★
+            ★ {hexaFact} ★
           </motion.p>
         </motion.div>
 

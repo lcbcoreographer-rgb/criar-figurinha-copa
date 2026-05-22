@@ -65,6 +65,17 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
 
   const buy = (plan) => {
     updateAnswer('plan', plan.id)
+
+    // UTMify — dispara InitiateCheckout
+    try {
+      const value = plan.id === 'familia' ? 29.87 : 10.00
+      window.utmify?.track('InitiateCheckout', {
+        value,
+        currency: 'BRL',
+        contents: [{ id: plan.id, name: plan.name, quantity: 1, price: value }],
+      })
+    } catch (_) {}
+
     const url = plan.id === 'familia' ? GG_FAMILIA_URL : GG_SOLO_URL
     window.location.href = url
   }

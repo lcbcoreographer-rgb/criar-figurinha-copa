@@ -122,17 +122,17 @@ export default function QuizStyle({ answers, updateAnswer, goNext, goBack }) {
                   className="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-200
                     focus:outline-none text-left relative overflow-hidden"
                   style={{
-                    background: isSelected || isHovered
-                      ? `${meta.border}12`
-                      : 'rgba(255,255,255,0.03)',
+                    background: isSelected
+                      ? `rgba(0,0,0,0.82)`
+                      : isHovered
+                        ? 'rgba(0,0,0,0.75)'
+                        : 'rgba(0,0,0,0.65)',
                     border: `1.5px solid ${isSelected
                       ? meta.border
                       : isHovered
-                        ? meta.border + '66'
-                        : 'rgba(255,255,255,0.08)'}`,
-                    boxShadow: isSelected
-                      ? `0 0 20px ${meta.border}33`
-                      : 'none',
+                        ? meta.border + '88'
+                        : 'rgba(255,255,255,0.15)'}`,
+                    boxShadow: isSelected ? `0 0 20px ${meta.border}44` : 'none',
                   }}
                 >
                   {/* Mini thumb */}

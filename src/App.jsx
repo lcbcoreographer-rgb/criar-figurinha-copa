@@ -25,7 +25,7 @@ const pageVariants = {
   center: { x: 0, opacity: 1, scale: 1 },
   exit:  (dir) => ({ x: dir > 0 ? '-60%' : '100%', opacity: 0, scale: 0.98 }),
 }
-const pageTransition = { type: 'spring', stiffness: 280, damping: 28 }
+const pageTransition = { type: 'tween', duration: 0.22, ease: 'easeInOut' }
 
 export default function App() {
   const [screen, setScreen] = useState(0)

@@ -264,32 +264,7 @@ export default function Landing({ goNext }) {
       onMouseMove={handleMouse}
       style={{ background: '#050a05', paddingTop: 40 }}
     >
-      {/* ── VÍDEO DE FUNDO ── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ objectFit: 'cover', opacity: 0.22, zIndex: 0 }}
-      >
-        <source src="/bg-video.mp4" type="video/mp4" />
-      </video>
-
-      {/* Overlay gradiente sobre o vídeo — mantém legibilidade */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          zIndex: 1,
-          background: `
-            radial-gradient(ellipse at 50% 50%, rgba(5,10,5,0.45) 0%, rgba(5,10,5,0.82) 100%),
-            linear-gradient(180deg, rgba(5,10,5,0.6) 0%, transparent 30%, transparent 70%, rgba(5,10,5,0.9) 100%)
-          `,
-        }}
-      />
-
-      {/* Overlay de cor verde/amarelo suave */}
+      {/* Overlay verde/amarelo exclusivo da landing */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

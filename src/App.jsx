@@ -68,7 +68,20 @@ export default function App() {
 
   return (
     <div className="relative min-h-dvh bg-dark overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none">
+      {/* Vídeo de fundo global — todas as telas */}
+      <video
+        autoPlay muted loop playsInline disablePictureInPicture
+        className="fixed inset-0 w-full h-full pointer-events-none"
+        style={{ objectFit: 'cover', opacity: 0.18, zIndex: 0 }}
+      >
+        <source src="/bg-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay escuro sobre o vídeo */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1,
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(5,10,5,0.55) 0%, rgba(5,10,5,0.85) 100%)' }} />
+
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <div className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(0,255,135,0.04) 0%, transparent 60%)' }} />
         <Particles count={28} color="#00FF87" />

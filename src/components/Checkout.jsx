@@ -127,9 +127,9 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
               transition={{ delay: 0.15 + i * 0.1, type: 'spring', stiffness: 200 }}
               className="relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300"
               style={{
-                background: 'rgba(0,0,0,0.7)',
-                border: `1.5px solid ${plan.border}`,
-                boxShadow: plan.glow,
+                background: 'rgba(15,15,15,0.92)',
+                border: `2px solid ${plan.borderActive}`,
+                boxShadow: plan.glow + `, 0 0 0 1px ${plan.border}`,
               }}
             >
               {/* Badge */}
@@ -167,7 +167,7 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
               </div>
 
               {/* Corpo do card */}
-              <div className="flex flex-col gap-4 p-5 flex-1" style={{ background: plan.gradient }}>
+              <div className="flex flex-col gap-4 p-5 flex-1" style={{ background: `linear-gradient(180deg, rgba(20,20,20,0.98) 0%, rgba(10,10,10,0.98) 100%)` }}>
 
                 {/* Copy emocional */}
                 <div>

@@ -262,7 +262,7 @@ export default function Landing({ goNext }) {
     <div
       className="screen-base relative overflow-hidden"
       onMouseMove={handleMouse}
-      style={{ background: '#050a05', paddingTop: 40 }}
+      style={{ background: 'transparent', paddingTop: 40 }}
     >
       {/* Overlay verde/amarelo exclusivo da landing */}
       <div

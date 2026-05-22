@@ -72,14 +72,14 @@ export default function App() {
       <video
         autoPlay muted loop playsInline disablePictureInPicture
         className="fixed inset-0 w-full h-full pointer-events-none"
-        style={{ objectFit: 'cover', opacity: 0.12, zIndex: 0 }}
+        style={{ objectFit: 'cover', opacity: 0.35, zIndex: 0 }}
       >
         <source src="/bg-video.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay escuro sobre o vídeo */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1,
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(5,10,5,0.78) 0%, rgba(5,10,5,0.96) 100%)' }} />
+        background: 'rgba(5,10,5,0.55)' }} />
 
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <div className="absolute inset-0"

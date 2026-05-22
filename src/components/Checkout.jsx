@@ -4,8 +4,8 @@ import { CARD_STYLES } from '../lib/cardGenerator'
 import { saveOrder } from '../lib/supabase'
 import { sendToN8N, EVENTS, buildPayload } from '../lib/webhooks'
 
-const GG_SOLO_URL    = import.meta.env.VITE_GGCHECKOUT_SOLO_URL    || ''
-const GG_FAMILIA_URL = import.meta.env.VITE_GGCHECKOUT_FAMILIA_URL || ''
+const GG_SOLO_URL    = 'https://comprar.criarfigurinhadacopa.online/checkout/v5/fnb12zqfrCV1PhlCBhsv'
+const GG_FAMILIA_URL = 'https://comprar.criarfigurinhadacopa.online/checkout/v5/ZMf7bZQEFU0vWPmofnex'
 
 const PLANS = [
   {

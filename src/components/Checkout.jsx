@@ -66,9 +66,21 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
   const buy = (plan) => {
     updateAnswer('plan', plan.id)
 
-    // UTMify — dispara InitiateCheckout
+    const value = plan.id === 'familia' ? 29.87 : 10.00
+
+    // Meta Pixel — InitiateCheckout
     try {
-      const value = plan.id === 'familia' ? 29.87 : 10.00
+      window.fbq?.('track', 'InitiateCheckout', {
+        value,
+        currency: 'BRL',
+        content_ids: [plan.id],
+        content_name: plan.name,
+        num_items: 1,
+      })
+    } catch (_) {}
+
+    // UTMify — InitiateCheckout
+    try {
       window.utmify?.track('InitiateCheckout', {
         value,
         currency: 'BRL',

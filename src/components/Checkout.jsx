@@ -63,27 +63,9 @@ function StyleBadge({ styleId }) {
 export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
   const [loading, setLoading] = useState(null) // 'solo' | 'familia' | null
 
-  const buy = async (plan) => {
-    setLoading(plan.id)
+  const buy = (plan) => {
     updateAnswer('plan', plan.id)
-
-    const data = { ...answers, plan: plan.id }
-
-    // Salva lead e dispara webhook antes de redirecionar
-    await saveOrder(data)
-    await sendToN8N(EVENTS.PAYMENT_INITIATED, buildPayload(data))
-
     const url = plan.id === 'familia' ? GG_FAMILIA_URL : GG_SOLO_URL
-
-    if (!url) {
-      // Modo dev — sem URL configurada
-      console.info('[Checkout] URL não configurada no .env — simulando pagamento')
-      await sendToN8N(EVENTS.PAYMENT_CONFIRMED, buildPayload(data))
-      setLoading(null)
-      goNext()
-      return
-    }
-
     window.location.href = url
   }
 

@@ -123,15 +123,15 @@ export default function QuizStyle({ answers, updateAnswer, goNext, goBack }) {
                     focus:outline-none text-left relative overflow-hidden"
                   style={{
                     background: isSelected
-                      ? `rgba(0,0,0,0.82)`
+                      ? `${meta.border}18`
                       : isHovered
-                        ? 'rgba(0,0,0,0.75)'
-                        : 'rgba(0,0,0,0.65)',
+                        ? 'rgba(255,255,255,0.08)'
+                        : 'rgba(255,255,255,0.05)',
                     border: `1.5px solid ${isSelected
                       ? meta.border
                       : isHovered
                         ? meta.border + '88'
-                        : 'rgba(255,255,255,0.15)'}`,
+                        : 'rgba(255,255,255,0.18)'}`,
                     boxShadow: isSelected ? `0 0 20px ${meta.border}44` : 'none',
                   }}
                 >

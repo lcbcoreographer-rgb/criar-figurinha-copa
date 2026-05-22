@@ -79,7 +79,7 @@ export default function App() {
 
       {/* Overlay escuro sobre o vídeo */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1,
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(5,10,5,0.72) 0%, rgba(5,10,5,0.94) 100%)' }} />
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(5,10,5,0.78) 0%, rgba(5,10,5,0.96) 100%)' }} />
 
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <div className="absolute inset-0"

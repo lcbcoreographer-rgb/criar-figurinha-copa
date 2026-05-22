@@ -55,7 +55,8 @@ export default function QuizCountry({ answers, updateAnswer, goNext }) {
           className="text-center mb-8"
         >
           <p className="text-ng/60 font-raj font-semibold text-sm tracking-widest uppercase mb-3">Pergunta 1</p>
-          <h2 className="font-bebas text-white text-4xl sm:text-5xl">
+          <h2 className="font-bebas text-white text-4xl sm:text-5xl drop-shadow-lg"
+            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
             Qual seleção você vai torcer?
           </h2>
         </motion.div>

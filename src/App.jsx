@@ -97,6 +97,7 @@ export default function App() {
           exit="exit"
           transition={pageTransition}
           className="min-h-dvh w-full"
+          style={{ position: 'relative', zIndex: 10 }}
         >
           <Screen {...props} />
         </motion.div>
@@ -106,7 +107,7 @@ export default function App() {
 
       {/* Progress dots do quiz */}
       {isQuiz && (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex gap-1.5">
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] flex gap-1.5">
           {quizScreens.map((_, i) => (
             <div key={i} className="rounded-full transition-all duration-300"
               style={{

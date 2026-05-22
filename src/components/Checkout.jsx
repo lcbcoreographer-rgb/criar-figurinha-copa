@@ -127,9 +127,9 @@ export default function Checkout({ answers, updateAnswer, goNext, goBack }) {
               transition={{ delay: 0.15 + i * 0.1, type: 'spring', stiffness: 200 }}
               className="relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300"
               style={{
-                background: 'rgba(15,15,15,0.92)',
+                background: 'rgba(10,10,10,0.96)',
                 border: `2px solid ${plan.borderActive}`,
-                boxShadow: plan.glow + `, 0 0 0 1px ${plan.border}`,
+                boxShadow: `${plan.glow}, 0 0 0 1px ${plan.border}, 0 8px 40px rgba(0,0,0,0.7)`,
               }}
             >
               {/* Badge */}
